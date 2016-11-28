@@ -1,86 +1,233 @@
-<div class="container">
+<div class="row">
+  <div class="col-md-8">
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div class="middle-content">
+          <div class="entry-meta">
+            <ul class="list-inline">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>她若安好那还得了</a></li>
+              <li><span>2016-11-21 10:24 </span></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
+            </ul>
+            <a class="info" href="detail.html">一天上课，一女生有事跟老师请假走了，一哥们也无缘无故地跟着走了，众人奇怪。中午回来后看见他的朋友圈发了条：“今天丢人丢大了，上课时我昏昏欲睡，突然看见一同学拿包走人。我以为下课了，也拿包走人……”
+            </a>
+          </div>
 
-  <div class="jiong-panel transition">
-
-    <form name="JiongForm"
-          ng-submit="jiongCtrl.create(jiongCtrl.jiong)" >
-
-      <div class="title-container">
-        <h1 class="text-muted text-center">Jiong</h1>
-      </div>
-
-      <hr />
-
-      <div class="jiongs-container">
-
-        <input type="text"
-               class="form-control input-lg"
-               placeholder="title.."
-               ng-model="jiongCtrl.jiong.title"
-               ng-minlength="2"
-               required/>
-        <input type="text"
-               class="form-control input-lg"
-               placeholder="content..."
-               ng-model="jiongCtrl.jiong.content"
-               name="content"
-               maxlength="100"
-               ng-maxlength="100"
-               ng-minlength="5"
-               required
-               autofocus />
-        <input type="text"
-               class="form-control input-lg"
-               placeholder="uid.."
-               ng-model="jiongCtrl.jiong.uid"
-               ng-minlength="2"
-               required/>
-        <input type="number"
-               class="form-control input-lg"
-               placeholder="pv.."
-               ng-model="jiongCtrl.jiong.pv"
-               required/>
-
-
-        <ng-messages for="JiongForm.content.$error">
-          <ng-message when="required" class="error-msg">Jiong field is required</ng-message>
-          <ng-message when="minlength" class="error-msg">Min of 5 chars</ng-message>
-          <ng-message when="maxlength" class="error-msg">Max of 100 chars</ng-message>
-        </ng-messages>
-
-        <br /><br />
-
-        <table class="table table-striped">
-          <tbody>
-            <tr ng-repeat="t in jiongCtrl.jiongs | orderBy: '-createdAt'">
-              <td class="text-muted jiong-in-jiongs">
-                <span ng-bind="t.title"></span>
-                <span ng-bind="t.content" ></span>
-                <span ng-bind="t.uid" ></span>
-                <div class="jiong-done transition"
-                     ng-click="jiongCtrl.delete(t._id)">x</div>
-              </td>
-
-            </tr>
-          </tbody>
-        </table>
-
-        <div ng-if="!jiongCtrl.jiongs.length">
-          <h3 class="text-muted text-center">Nothing to do. Go play outside :D</h3>
         </div>
-
       </div>
+    </div>
 
-      <hr />
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div class="middle-content">
+          <div class="entry-meta">
+            <ul class="list-inline">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>斜刘海白衬衫的少年</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
 
-      <div class="footer-container">
-        <button type="submit"
-                id="submit-jiong-button"
-                class="btn btn-success btn-block btn-lg submit-jiong"
-                ng-disabled="JiongForm.$invalid "> ADD </button>
+            </ul>
+            <a class="info" href="detail.html">
+              奶奶去世早，爷爷寂寞地过了十几年孤单日子。现在快90了，整天念叨不想再活了。有一天他竟弄了张“遗照”挂奶奶遗照旁边了。家人都拗不过就随他去了。一日同学来玩，看见照片问是谁，我说是爷爷奶奶。赶巧爷爷从里屋走出来，默默出门了。一阵沈默，同学惊恐的问：你刚刚有看到吗？
+            </a>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div class="middle-content">
+          <div class="entry-meta">
+            <ul class="list-inline">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>老衲住惯了旅店</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
 
-    </form>
+            </ul>
+            <a class="info" href="detail.html">
+              小明掏口袋的时候，一把钥匙掉了，当时没有发现，后来回去找！在路边有对小情侣在那里，男的突然激动的说：是谁的？到底是谁的？小明连忙说：我的，我的，是我的！后来小明才知道，原来是那女的怀孕了~
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div class="middle-content">
+          <div class="entry-meta">
+            <ul class="list-inline">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>不离不弃只是童言无忌</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
+
+            </ul>
+            <a class="info" href="detail.html">哥几个合资要开一家公司，为了彰显公司的牛逼，特取名“能力”!“能力公司”听着多霸气啊!兴高采烈地从工商局拿回执照，哥几个傻眼了，只见执照上大大地写着“能力有限公司”。
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div class="middle-content">
+          <div class="entry-meta">
+            <ul class="list-inline">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>她若安好立即推到</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
+
+            </ul>
+            <a class="info" href="detail.html">
+              最近买了电子烟，使用感觉还不错。昨天出门坐公交随手就塞到牛仔裤兜里了，可能是牛仔裤太紧，压到开关了，整个车厢的人都看我胯下部位一直在冒烟，我还专心看手机根本没发觉，直到一个好心的哥们拍拍我，哥们你好像屌炸了
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 wow fadeIn">
+      <div class="post">
+        <div href="" class="col-md-6 media">
+          <img src="common/images/5.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-6 caption">
+          <div class="entry-meta">
+            <ul class="list-inline clearfix">
+              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
+              <li><a>你的样貌让我荡洋</a></li>
+              <li><span>2016-11-21 10:24 </span></li>
+              <br>
+              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
+              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
+              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
+              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
+            </ul>
+            <a class="info" href="detail.html">
+              一神经病在床上唱歌，唱着唱着翻了个身，趴在枕头上继续唱歌。主治医生问：“唱就唱吧，你翻身干什么？”神经病说：“傻瓜， A面唱完了当然要唱 B面了。”
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="sidebar">
+      <div class="widget">
+        <h2 class="section-title">热门囧事</h2>
+        <ul class="hot-list clearfix">
+          <li class="col-sm-6">
+            <div class="post">
+              <a class="post-content">
+                <div class="entry-meta">
+                  <img src="common/images/1.jpg">
+                </div>
+                <h2 class="entry-title">好看的搞笑综艺全球幽默搞笑首榜搞笑首榜</h2>
+              </a>
+            </div><!--/post-->
+          </li>
+          <li class="col-sm-6">
+            <div class="post">
+              <a class="post-content">
+                <div class="entry-meta">
+                  <img src="common/images/1.jpg">
+                </div>
+                <h2 class="entry-title">全球幽默搞笑首榜</h2>
+              </a>
+            </div><!--/post-->
+          </li>
+          <li class="col-sm-6">
+            <div class="post">
+              <a class="post-content">
+                <div class="entry-meta">
+                  <img src="common/images/1.jpg">
+                </div>
+                <h2 class="entry-title">全球幽默搞笑首榜</h2>
+              </a>
+            </div><!--/post-->
+          </li>
+          <li class="col-sm-6">
+            <div class="post">
+              <a class="post-content">
+                <div class="entry-meta">
+                  <img src="common/images/1.jpg">
+                </div>
+                <h2 class="entry-title">全球幽默搞笑首榜</h2>
+              </a>
+            </div><!--/post-->
+          </li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h2 class="section-title">热门评论</h2>
+        <ul class="comment-list">
+          <li>
+            <div class="post">
+              <div class="post-content">
+                <div class="entry-meta">
+                  <ul class="list-inline">
+                    <li class="post-author"><a>南宫桃宝</a></li>
+                    <li class="publish-date"><a>2016-11-21</a></li>
+                  </ul>
+                </div>
+                <h2 class="entry-title">
+                  <a href="details.html">幸好是她，要是他的话现在坟头的草估计老高了！</a>
+                </h2>
+              </div>
+            </div><!--/post-->
+          </li>
+          <li>
+            <div class="post">
+              <div class="post-content">
+                <div class="entry-meta">
+                  <ul class="list-inline">
+                    <li class="post-author"><a>南宫桃宝</a></li>
+                    <li class="publish-date"><a>2016-11-21</a></li>
+                  </ul>
+                </div>
+                <h2 class="entry-title">
+                  <a href="details.html">幸好是她，要是他的话现在坟头的草估计老高了！</a>
+                </h2>
+              </div>
+            </div><!--/post-->
+          </li>
+          <li>
+            <div class="post">
+              <div class="post-content">
+                <div class="entry-meta">
+                  <ul class="list-inline">
+                    <li class="post-author"><a>南宫桃宝</a></li>
+                    <li class="publish-date"><a>2016-11-21</a></li>
+                  </ul>
+                </div>
+                <h2 class="entry-title">
+                  <a href="details.html">幸好是她，要是他的话现在坟头的草估计老高了！</a>
+                </h2>
+              </div>
+            </div><!--/post-->
+          </li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 </div>

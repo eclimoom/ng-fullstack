@@ -1,7 +1,7 @@
-;(function(ng) {
+(function() {
   'use strict';
 
-  ng.module('jiong')
+  angular.module('jiong')
     .factory('JiongDAO', [
       '$q',
       'Jiong',
@@ -74,4 +74,4 @@
       }
     ]);
 
-}(window.angular));
+})();

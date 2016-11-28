@@ -1,25 +1,25 @@
 <!doctype html>
 <html ng-app="jiong">
   <head>
-
     <base href="/"/>
-
+    <meta charset="utf-8">
+    <title>囧囧网·爆笑囧事笑话只在囧囧网</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="My awesome application">
-    <meta name="keywords" content="Todo,myAwesomeApp,App">
-    <meta name="author" content="Author">
-
-
-
-    <title>todo :D</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta name="keywords" content="囧囧网,笑话,搞笑,笑话大全 爆笑,笑话大全,幽默笑话,爆笑笑话" />
+    <meta name="description" content="囧囧网是一个原创的囧事笑话分享社区,囧囧百事网友分享的搞笑段子、搞笑图片大全,都是囧友最珍贵的开心经历,爆笑囧事笑话只在囧囧网！" />
+    <meta name="author" content="亦远汇智" />
+    <meta name="application-name" content="囧囧网" />
     <link rel="shortcut icon" type="image/ico" href="./favicon.png"/>
-
     <link type="text/css" rel="stylesheet" href="./bower_components/fontawesome/css/font-awesome.min.css?rev=@@hash"/>
     <link type="text/css" rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css?rev=@@hash"/>
-    <link type="text/css" rel="stylesheet" href="./todo/styles/styles.css?rev=@@hash"/>
+    <link type="text/css" rel="stylesheet" href="./jiong/styles/normalize.css?rev=@@hash"/>
+    <link type="text/css" rel="stylesheet" href="./jiong/styles/styles.css?rev=@@hash"/>
   </head>
 
-  <body>
+  <body scroll-change>
 
     <div ui-view></div>
 
@@ -33,6 +33,7 @@
     <script type="text/javascript" src="./app.route.js?rev=@@hash"></script>
 
 
+    <script type="text/javascript" src="./jiong/directives/scrollchange.js?rev=@@hash"></script>
     <script type="text/javascript" src="./jiong/models/jiong-model.js?rev=@@hash"></script>
     <script type="text/javascript" src="./jiong/services/jiong-dao.js?rev=@@hash"></script>
     <script type="text/javascript" src="./jiong/services/jiong-resource.js?rev=@@hash"></script>

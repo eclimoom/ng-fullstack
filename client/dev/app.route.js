@@ -17,16 +17,15 @@
           controllerAs: 'jiongCtrl'
         })
 
-        //客户管理
-        //.state('app.personnel-add', {
-        //  url: '/personnel-add',
-        //  templateUrl: 'views/user/personnel-add.html',
+        //.state('app.detail', {
+        //  url: '/detail/:id',
+        //  templateUrl: 'jiong/templates/detail.html',
         //  //resolve : {
         //  //  getUserInfo:  function(User,cookieStore,$q){
         //  //    return (cookieStore.get("loginId") && User.getUserById({uid:cookieStore.get("loginId")},{}));
         //  //  }
         //  //},
-        //  controller: 'PersonnelCtrl'
+        //  controller: 'DetailCtrl'
         //})
 
 
