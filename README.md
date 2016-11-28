@@ -2,16 +2,19 @@
 
 
 When the dependencies are ready, you'll be able to run the watcher for file changes and start the server, by either running just:
-
+```shell
 $ npm run dev
+```
 Or running gulp and npm start separated:
-
+```shell
 $ npm start
 $ npm run watch
+```
+if you want to deploying:
 
-
-npm run build-dist
- before deploying 
+```shell
+$npm run build-dist
+```
 
 
 
