@@ -2,22 +2,24 @@
   'use strict';
 
   ng.module('jiong')
-    .factory('Todo', [function() {
-      var Todo = function(todo) {
-        this.todoMessage = null;
-        ng.extend(this, todo);
+    .factory('Jiong', [function() {
+      var Jiong = function(jiong) {
+        this.title = null;
+        this.content = null;
+        this.uid = null;
+        ng.extend(this, jiong);
       };
 
       var MIN_ACCEPTED_LENGTH = 5;
 
-      Todo.prototype.isValid = function() {
+      Jiong.prototype.isValid = function() {
         var _isDefined = ng.isDefined(this.content);
         var _isString = ng.isString(this.content);
         var _isBigEnough = (_isDefined && _isString) ? this.content.length >= MIN_ACCEPTED_LENGTH : false;
         return _isDefined && _isString && _isBigEnough;
       };
 
-      return Todo;
+      return Jiong;
     }]);
 
 }(window.angular));

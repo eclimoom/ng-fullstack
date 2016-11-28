@@ -3,7 +3,7 @@
 
   ng.module('jiong', [
       'ngResource',
-      'ngRoute',
+      'ui.router',
       'ngMessages'
     ]);
 }(window.angular));

@@ -1,29 +1,29 @@
 <div class="container">
 
-  <div class="todo-panel transition">
+  <div class="jiong-panel transition">
 
-    <form name="TodoForm"
-          ng-submit="todoCtrl.createTodo(todoCtrl.todo)" >
+    <form name="JiongForm"
+          ng-submit="jiongCtrl.create(jiongCtrl.jiong)" >
 
       <div class="title-container">
-        <h1 class="text-muted text-center">Todo</h1>
+        <h1 class="text-muted text-center">Jiong</h1>
       </div>
 
       <hr />
 
-      <div class="todos-container">
+      <div class="jiongs-container">
 
         <input type="text"
                class="form-control input-lg"
                placeholder="title.."
-               ng-model="todoCtrl.todo.title"
+               ng-model="jiongCtrl.jiong.title"
                ng-minlength="2"
                required/>
         <input type="text"
                class="form-control input-lg"
                placeholder="content..."
-               ng-model="todoCtrl.todo.content"
-               name="todoMsg"
+               ng-model="jiongCtrl.jiong.content"
+               name="content"
                maxlength="100"
                ng-maxlength="100"
                ng-minlength="5"
@@ -32,19 +32,18 @@
         <input type="text"
                class="form-control input-lg"
                placeholder="uid.."
-               ng-model="todoCtrl.todo.uid"
+               ng-model="jiongCtrl.jiong.uid"
                ng-minlength="2"
                required/>
-        <input type="text"
+        <input type="number"
                class="form-control input-lg"
                placeholder="pv.."
-               ng-model="todoCtrl.todo.pv"
-               ng-minlength="2"
+               ng-model="jiongCtrl.jiong.pv"
                required/>
 
 
-        <ng-messages for="TodoForm.todoMsg.$error">
-          <ng-message when="required" class="error-msg">Todo field is required</ng-message>
+        <ng-messages for="JiongForm.content.$error">
+          <ng-message when="required" class="error-msg">Jiong field is required</ng-message>
           <ng-message when="minlength" class="error-msg">Min of 5 chars</ng-message>
           <ng-message when="maxlength" class="error-msg">Max of 100 chars</ng-message>
         </ng-messages>
@@ -53,19 +52,20 @@
 
         <table class="table table-striped">
           <tbody>
-            <tr ng-repeat="t in todoCtrl.todos | orderBy: '-createdAt'">
-              <td class="text-muted todo-in-todos">
-                <span ng-bind="t.todoMessage"></span>
-                <span ng-bind="t.desc" ></span>
-                <div class="todo-done transition"
-                     ng-click="todoCtrl.deleteTodo(t._id)">x</div>
+            <tr ng-repeat="t in jiongCtrl.jiongs | orderBy: '-createdAt'">
+              <td class="text-muted jiong-in-jiongs">
+                <span ng-bind="t.title"></span>
+                <span ng-bind="t.content" ></span>
+                <span ng-bind="t.uid" ></span>
+                <div class="jiong-done transition"
+                     ng-click="jiongCtrl.delete(t._id)">x</div>
               </td>
 
             </tr>
           </tbody>
         </table>
 
-        <div ng-if="!todoCtrl.todos.length">
+        <div ng-if="!jiongCtrl.jiongs.length">
           <h3 class="text-muted text-center">Nothing to do. Go play outside :D</h3>
         </div>
 
@@ -75,9 +75,9 @@
 
       <div class="footer-container">
         <button type="submit"
-                id="submit-todo-button"
-                class="btn btn-success btn-block btn-lg submit-todo"
-                ng-disabled="TodoForm.$invalid || !todoCtrl.todo.isValid()"> ADD </button>
+                id="submit-jiong-button"
+                class="btn btn-success btn-block btn-lg submit-jiong"
+                ng-disabled="JiongForm.$invalid "> ADD </button>
       </div>
 
     </form>

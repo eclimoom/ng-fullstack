@@ -3,7 +3,7 @@
   <div class="todo-panel transition">
 
     <form name="TodoForm"
-          ng-submit="todoCtrl.createTodo(todoCtrl.todo)" >
+          ng-submit="jiongCtrl.create(jiongCtrl.jiong)" >
 
       <div class="title-container">
         <h1 class="text-muted text-center">Todo</h1>
@@ -23,7 +23,7 @@
                class="form-control input-lg"
                placeholder="content..."
                ng-model="todoCtrl.todo.content"
-               name="todoMsg"
+               name="content"
                maxlength="100"
                ng-maxlength="100"
                ng-minlength="5"
@@ -35,15 +35,14 @@
                ng-model="todoCtrl.todo.uid"
                ng-minlength="2"
                required/>
-        <input type="text"
+        <input type="number"
                class="form-control input-lg"
                placeholder="pv.."
                ng-model="todoCtrl.todo.pv"
-               ng-minlength="2"
                required/>
 
 
-        <ng-messages for="TodoForm.todoMsg.$error">
+        <ng-messages for="TodoForm.content.$error">
           <ng-message when="required" class="error-msg">Todo field is required</ng-message>
           <ng-message when="minlength" class="error-msg">Min of 5 chars</ng-message>
           <ng-message when="maxlength" class="error-msg">Max of 100 chars</ng-message>
@@ -53,12 +52,13 @@
 
         <table class="table table-striped">
           <tbody>
-            <tr ng-repeat="t in todoCtrl.todos | orderBy: '-createdAt'">
+            <tr ng-repeat="t in jiongCtrl.jiongs | orderBy: '-createdAt'">
               <td class="text-muted todo-in-todos">
-                <span ng-bind="t.todoMessage"></span>
-                <span ng-bind="t.desc" ></span>
+                <span ng-bind="t.title"></span>
+                <span ng-bind="t.content" ></span>
+                <span ng-bind="t.uid" ></span>
                 <div class="todo-done transition"
-                     ng-click="todoCtrl.deleteTodo(t._id)">x</div>
+                     ng-click="todoCtrl.delete(t._id)">x</div>
               </td>
 
             </tr>
@@ -77,7 +77,7 @@
         <button type="submit"
                 id="submit-todo-button"
                 class="btn btn-success btn-block btn-lg submit-todo"
-                ng-disabled="TodoForm.$invalid || !todoCtrl.todo.isValid()"> ADD </button>
+                ng-disabled="TodoForm.$invalid "> ADD </button>
       </div>
 
     </form>
