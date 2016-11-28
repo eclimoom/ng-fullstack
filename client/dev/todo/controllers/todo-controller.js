@@ -13,6 +13,7 @@
         self.todos = [];
 
         self.createTodo = function(todo) {
+          todo.desc = new Date();
           TodoDAO
             .createTodo(todo)
             .then(function(newTodo) {

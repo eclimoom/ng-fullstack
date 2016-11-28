@@ -10,10 +10,10 @@ Or running gulp and npm start separated:
 $ npm start
 $ npm run watch
 ```
-if you want to deploying:
 
+Then we deploy it to Server:
 ```shell
-$npm run build-dist
+$ npm run build-dist
 ```
 
 
