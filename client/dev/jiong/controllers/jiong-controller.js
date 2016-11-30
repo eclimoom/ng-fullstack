@@ -7,17 +7,20 @@
       'Jiong',
       'JiongDAO',
       function($log, Jiong, JiongDAO) {
-        var self = this;
 
-        self.jiong = new Jiong();
-        self.jiongs = [];
+        var vm = this;
 
-        self.create = function(jiong) {
+        vm.jiong = new Jiong();
+        vm.jiongs = [];
+
+        vm.create = function(jiong) {
+          //TODO:add user system
+          jiong.uid = jiong.title;
           JiongDAO
             .create(jiong)
             .then(function(newJiong) {
-              self.jiongs.push(newJiong);
-              self.jiong = new Jiong();
+              vm.jiongs.push(newJiong);
+              vm.jiong = new Jiong();
             })
             .catch($log.error);
         };
@@ -28,13 +31,13 @@
           return JiongDAO
             .getAll()
             .then(function(jiongs) {
-              self.jiongs = jiongs;
-              return self.jiongs;
+              vm.jiongs = jiongs;
+              return vm.jiongs;
             })
             .catch($log.error);
         }
 
-        self.delete = function(id) {
+        vm.delete = function(id) {
           JiongDAO
             .delete(id)
             .then(function() {
@@ -45,7 +48,7 @@
 
         _getAll();
 
-        return self;
+        return vm;
       }
     ]);
 }(window.angular));

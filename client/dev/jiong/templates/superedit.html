@@ -1,0 +1,69 @@
+<div class="row">
+  <form class="col-md-10 form-horizontal" name="JiongForm"
+        ng-submit="vm.create(vm.jiong)">
+
+    <div class="title-container">
+      <h1 class="text-muted text-center">Jiong</h1>
+    </div>
+
+    <hr/>
+
+    <div class="jiongs-container">
+      <div class="col-md-5">
+        <input type="text"
+               class="form-control"
+               placeholder="username.."
+               ng-model="vm.jiong.title"
+               ng-minlength="2"
+               required/>
+      </div>
+      <div class="col-md-12">
+        <textarea type="text"
+               class="form-control"
+               placeholder="content..."
+               ng-model="vm.jiong.content"
+               name="jiongMsg"
+               maxlength="200"
+               ng-maxlength="200"
+               ng-minlength="5"
+                  rows="3"
+               required >
+
+        </textarea>
+      </div>
+
+      <div class="footer-container col-md-5">
+        <button type="submit"
+                id="submit-jiong-button"
+                class="btn btn-success btn-block btn-lg submit-jiong"
+                ng-disabled="JiongForm.$invalid"> ADD
+        </button>
+      </div>
+
+
+      <hr/>
+
+      <table class="table table-striped">
+        <tbody>
+        <tr ng-repeat="t in vm.jiongs">
+          <td class="text-muted jiong-in-jiongs">
+            <span>{{t.title +' '+ t.content +' '+ t.uid +' '+ t.pv}}</span>
+            <span ng-bind="t.desc"></span>
+            <div class="jiong-done transition"
+                 ng-click="vm.delete(t._id)">x
+            </div>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+
+      <div ng-if="!vm.jiongs.length">
+        <h3 class="text-muted text-center">Nothing jiongs. Now add it :D</h3>
+      </div>
+
+    </div>
+
+
+  </form>
+</div>

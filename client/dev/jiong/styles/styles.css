@@ -16,7 +16,9 @@ a:hover,a:focus{text-decoration:none;}
 .header ul li.active > a{color:rgba(255,255,255,1);text-shadow:0 1px 1px rgba(0,0,0,.1);}
 .margin-left30{margin-left:30px;}
 .bd{padding-top:102px;}
-.post{background:#fff;margin:12px;height:auto;overflow:hidden;-webkit-box-shadow:0px 3px 4px 0px rgba(0,0,0,0.03);-moz-box-shadow:0px 3px 4px 0px rgba(0,0,0,0.03);box-shadow:0px 3px 4px 0px rgba(0,0,0,0.03);}
+.post{background:#fff;margin:12px;height:auto;overflow:hidden;box-shadow:0px 3px 4px 0px rgba(0,0,0,0.03);}
+.post:hover{box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.36);}
+.post:hover .info{color:#222;}
 .sidebar{margin:12px;}
 .sidebar .post{margin:0;padding:12px;}
 .middle-content{padding:12px;background-color:#fff;}
@@ -55,12 +57,12 @@ a:hover,a:focus{text-decoration:none;}
 .entry-meta .info:hover{color:#222;}
 .img-responsive{display:block;max-width:100%;height:auto;}
 .index-list .post .caption{padding:20px 24px;}
-.footer{background:#fff;text-align:center;padding:0;}
+.footer{background:#fff;text-align:center;padding:0;margin-top: 20px;}
 .footer .list-inline{margin-bottom:0;}
 .footer .links{padding:20px 0 0 0;}
 .footer .brand{font-size:24px;font-weight:300;margin:0;}
 .footer li a{color:#7F7F7F;line-height:30px;}
-.foot-copyrights{padding:20px 0 10px 0;margin:30px auto 0;text-align:center;border-top:1px solid #efefef;}
+.foot-copyrights{padding:20px 0 10px 0;margin:20px auto 0;text-align:center;border-top:1px solid #efefef;}
 
 
 /* Fixed Header----------------------------------------------------------------------------- */
@@ -80,11 +82,11 @@ a:hover,a:focus{text-decoration:none;}
 
 
 /*detail begin*/
+.no-padding{padding: 0;}
 .page-tools{
   font-size: 14px;
   margin: 10px 0 20px;
 }
-.page-tools .col-sm-2{padding: 0;}
 .page-tools .btn{
   width: 100%;
 }

@@ -19,6 +19,16 @@ module.exports = class JiongController {
         .catch(error => res.status(400).json(error));
   }
 
+
+  static findById(req, res) {
+    let _id = req.params.id;
+
+    JiongDAO
+      .findById(_id)
+      .then(jiong => res.status(200).json(jiong))
+      .catch(error => res.status(400).json(error));
+  }
+
   static delete(req, res) {
     let _id = req.params.id;
 

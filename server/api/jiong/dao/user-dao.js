@@ -2,58 +2,58 @@
 
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
-const jiongSchema = require('../model/jiong-model');
+const userSchema = require('../model/user-model');
 const _ = require('lodash');
 
-jiongSchema.statics.getAll = () => {
+userSchema.statics.getAll = () => {
   return new Promise((resolve, reject) => {
     let _query = {};
-    Jiong
+    User
       .find(_query)
-      .sort({ createdAt: -1 })
-      .exec((err, jiongs) => {
+      .exec((err, users) => {
         err ? reject(err)
-          : resolve(jiongs);
+          : resolve(users);
       });
   });
 }
 
-jiongSchema.statics.findById = (id) => {
+userSchema.statics.findById = (id) => {
   return new Promise((resolve, reject) => {
     if (!_.isString(id))
       return reject(new TypeError('Id is not a valid string.'));
 
-    Jiong
-      .findOne({_id:id})
-      .exec((err, jiong) => {
+    User
+      .findById(id)
+      .exec((err, deleted) => {
         err ? reject(err)
-          : resolve(jiong);
+          : resolve();
       });
   });
 }
 
 
 
-jiongSchema.statics.create = (jiong) => {
+
+userSchema.statics.create = (user) => {
   return new Promise((resolve, reject) => {
-    if (!_.isObject(jiong))
-      return reject(new TypeError('Jiong is not a valid object.'));
+    if (!_.isObject(user))
+      return reject(new TypeError('User is not a valid object.'));
 
-    let _jiong = new Jiong(jiong);
+    let _user = new User(user);
 
-    _jiong.save((err, saved) => {
+    _user.save((err, saved) => {
       err ? reject(err)
         : resolve(saved);
     });
   });
 }
 
-jiongSchema.statics.delete = (id) => {
+userSchema.statics.delete = (id) => {
   return new Promise((resolve, reject) => {
     if (!_.isString(id))
       return reject(new TypeError('Id is not a valid string.'));
 
-    Jiong
+    User
       .findByIdAndRemove(id)
       .exec((err, deleted) => {
         err ? reject(err)
@@ -62,6 +62,6 @@ jiongSchema.statics.delete = (id) => {
   });
 }
 
-const Jiong  = mongoose.model('Jiong', jiongSchema);
+const User  = mongoose.model('User', userSchema);
 
 module.exports = Jiong;

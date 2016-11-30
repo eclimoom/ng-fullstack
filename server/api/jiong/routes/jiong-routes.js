@@ -10,6 +10,7 @@ module.exports = class JiongRoutes {
         .post(JiongController.create);
       router
         .route('/api/jiongs/:id')
+        .get(JiongController.findById)
         .delete(JiongController.delete);
 
     }

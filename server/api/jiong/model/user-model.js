@@ -2,13 +2,15 @@
 
 const mongoose = require('mongoose');
 
-const _commentSchema = {
-  _jiong: {type:Number,ref: 'Jiong'},
-  password: {type: Number, default:0},
+const _userSchema = {
+  name: { type: 'string'},
+  password: {type: Number},
   nick: {type: String, required: true, trim: true},
   avatar: {type: String, default:'url', trim: true},
-  _user: {type: Number, ref:'User'},
+  gender: { type: 'string', enum: ['m', 'f', 'x'] },
   createdAt: {type: Date, default: Date.now}
 }
 
-module.exports = mongoose.Schema(_commentSchema);
+
+
+module.exports = mongoose.Schema(_userSchema);

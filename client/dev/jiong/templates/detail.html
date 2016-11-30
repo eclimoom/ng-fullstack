@@ -1,62 +1,83 @@
 <div class="row">
   <div class="col-md-8">
-    <div class="col-md-12 wow fadeIn" ng-repeat="t in vm.jiongs">
+    <div class="col-md-12 wow fadeIn">
       <div class="post">
         <div class="middle-content">
           <div class="entry-meta">
             <ul class="list-inline">
-              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
-              <li><a>{{t.title}}</a></li>
-              <li><span>{{t.createdAt}} </span></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
-              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
-              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
+              <li class="post-head"><a><img src="../../common/images/1.jpg"></a></li>
+              <li><a>{{vm.jiong.title}}</a></li>
+              <li><span>{{vm.jiong.createdAt}} </span></li>
+              <li><a href="#">赞 {{vm.jiong.like}}</a></li>
+              <li><a href="#">嘘 {{vm.jiong.unlike}}</a></li>
+              <li><a href="#">收藏 {{vm.jiong.fav}}</a></li>
+              <li><a href="#">评论 20</a></li>
             </ul>
-            <a class="info" href="/detail/{{t._id}}" ui-sref="app.detail({id:t._id})">
-              {{t.content}}
+            <a class="info" href="#">
+              {{vm.jiong.content}}
             </a>
+
           </div>
+          <div class="row page-tools">
+            <div class="col-sm-2 no-padding">
+              <a class=" btn btn-default">上一条</a>
+            </div>
+            <div class="col-sm-2">
+              <a class="btn btn-primary"><i class="fa fa-star-o"></i>加入收藏</a>
+            </div>
+            <div class="col-sm-8 no-padding">
+              <a class="btn btn-primary">下一条，你懂的</a>
+            </div>
+          </div>
+
+          <div class="entry-content-wrapper">
+            <h2 class="entry-title">留言</h2>
+            <div class="comment_list">
+              <ul id="comment-list">
+                <li class="list_item">
+                  <div class="item_avatar">
+                    <img src="http://qzapp.qlogo.cn/qzapp/100263567/B743CD81E553DED07651A2F1F0C3AEAC/50" alt="">
+                  </div>
+                  <div class="item_user">
+                    <p><a class="user_name" href="#">Rachel</a><span class="item_time">2016-05-03 17:41:12</span></p>
+                    <p class="user_comment">
+                      有空哦，大家都这么忙，互相了解对方的长处和深度就行了</p>
+                  </div>
+                </li>
+                <li class="list_item">
+                  <div class="item_avatar">
+                    <img src="http://qzapp.qlogo.cn/qzapp/100263567/B743CD81E553DED07651A2F1F0C3AEAC/50" alt="">
+                  </div>
+                  <div class="item_user">
+                    <p><a class="user_name">大型互联网企业生产环境中</a><span class="item_time">2016-05-03 17:41:12</span></p>
+                    <p class="user_comment">
+                      有空哦，大家都这么忙，互相了解对方的长处和深度就行了</p>
+                  </div>
+                </li>
+              </ul>
+              <form action="">
+                <textarea name="comment" class="comment-txt" id="comment-input" cols="30" rows="4" placeholder="请评论"></textarea>
+                <button type="submit" class="btn btn-primary">提交</button>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
 
-    <div class="col-md-12 wow fadeIn">
-      <div class="post">
-        <div href="" class="col-md-6 media">
-          <img src="common/images/5.jpg" class="img-responsive">
-        </div>
-        <div class="col-md-6 caption">
-          <div class="entry-meta">
-            <ul class="list-inline clearfix">
-              <li class="post-head"><a><img src="common/images/1.jpg"></a></li>
-              <li><a>你的样貌让我荡洋</a></li>
-              <li><span>2016-11-21 10:24 </span></li>
-              <br>
-              <li><a href="#"><i class="fa fa-thumbs-o-up"></i>3002</a></li>
-              <li><a href="#"><i class="fa fa-thumbs-o-down"></i>3</a></li>
-              <li><a href="#"><i class="fa fa-star-o"></i>500</a></li>
-              <li><a href="#"><i class="fa fa-comment-o"></i>20</a></li>
-            </ul>
-            <a class="info" href="detail.html">
-              一神经病在床上唱歌，唱着唱着翻了个身，趴在枕头上继续唱歌。主治医生问：“唱就唱吧，你翻身干什么？”神经病说：“傻瓜， A面唱完了当然要唱 B面了。”
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="col-md-4">
     <div class="sidebar">
       <div class="widget">
-        <h2 class="section-title">热门囧事</h2>
+        <h2 class="section-title">热门1</h2>
         <ul class="hot-list clearfix">
           <li class="col-sm-6">
             <div class="post">
               <a class="post-content">
                 <div class="entry-meta">
-                  <img src="common/images/1.jpg">
+                  <img src="../../common/images/1.jpg">
                 </div>
                 <h2 class="entry-title">好看的搞笑综艺全球幽默搞笑首榜搞笑首榜</h2>
               </a>
@@ -66,7 +87,7 @@
             <div class="post">
               <a class="post-content">
                 <div class="entry-meta">
-                  <img src="common/images/1.jpg">
+                  <img src="../../common/images/1.jpg">
                 </div>
                 <h2 class="entry-title">全球幽默搞笑首榜</h2>
               </a>
@@ -76,7 +97,7 @@
             <div class="post">
               <a class="post-content">
                 <div class="entry-meta">
-                  <img src="common/images/1.jpg">
+                  <img src="../../common/images/1.jpg">
                 </div>
                 <h2 class="entry-title">全球幽默搞笑首榜</h2>
               </a>
@@ -86,7 +107,7 @@
             <div class="post">
               <a class="post-content">
                 <div class="entry-meta">
-                  <img src="common/images/1.jpg">
+                  <img src="../../common/images/1.jpg">
                 </div>
                 <h2 class="entry-title">全球幽默搞笑首榜</h2>
               </a>
@@ -147,5 +168,4 @@
     </div>
 
   </div>
-
 </div>

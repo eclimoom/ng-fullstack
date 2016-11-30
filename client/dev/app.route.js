@@ -14,10 +14,24 @@
           url: "/main",
           templateUrl: "jiong/templates/jiong.html",
           controller: 'JiongController',
-          controllerAs: 'jiongCtrl'
+          controllerAs: 'vm'
         })
 
-        //.state('app.detail', {
+        .state('app.adminedit', {
+          url: "/superyyhz",
+          templateUrl: "jiong/templates/superedit.html",
+          controller: 'JiongController',
+          controllerAs: 'vm'
+        })
+        .state('app.detail', {
+          url: "/detail/:id",
+          templateUrl: "jiong/templates/detail.html",
+          controller: 'DetailController',
+          controllerAs: 'vm'
+        })
+
+
+      //.state('app.detail', {
         //  url: '/detail/:id',
         //  templateUrl: 'jiong/templates/detail.html',
         //  //resolve : {
