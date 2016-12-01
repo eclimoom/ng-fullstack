@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-8 index-list">
-    <div class="col-md-12 wow fadeIn" ng-repeat="t in vm.jiongs">
+    <div class="col-md-12 wow fadeIn" ng-repeat="t in vm.result.list">
       <div class="post">
         <div class="middle-content">
           <div class="entry-meta">
@@ -45,6 +45,19 @@
         </div>
       </div>
     </div>
+
+    <ul uib-pagination
+        total-items="vm.result.itemsTotal"
+        ng-model="vm.pageCurrent"
+        max-size="8"
+        items-per-page="2"
+        class="pagination-sm"
+        previous-text="上一页"
+        next-text="下一页"
+        boundary-link-numbers="true"
+        ng-change="vm.pageChanged()"></ul>
+
+
   </div>
 
   <div class="col-md-4">

@@ -4,6 +4,7 @@
   ng.module('jiong', [
       'ngResource',
       'ui.router',
-      'ngMessages'
+      'ngMessages',
+      'ui.bootstrap'
     ]);
 }(window.angular));

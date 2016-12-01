@@ -5,15 +5,32 @@ const Promise = require('bluebird');
 const jiongSchema = require('../model/jiong-model');
 const _ = require('lodash');
 
-jiongSchema.statics.getAll = () => {
+jiongSchema.statics.getAll = (params) => {
   return new Promise((resolve, reject) => {
+
+    //TODO:remove this section to controller
+    let _page = {pageIndex:1,pageSize:20};
     let _query = {};
+    let _skip = 0;
+    if (_.isObject(params)){
+      _page.pageIndex = parseInt(params.pageIndex,10) || _page.pageIndex;
+      _page.pageSize = parseInt(params.pageSize,10) || _page.pageSize;
+      _skip = _page.pageIndex < 2 ? 0 : (_page.pageIndex-1) * _page.pageSize
+    }
     Jiong
       .find(_query)
+      .skip(_skip)
+      .limit(_page.pageSize)
       .sort({ createdAt: -1 })
-      .exec((err, jiongs) => {
-        err ? reject(err)
-          : resolve(jiongs);
+      .exec((err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          Jiong.count(_query, function(error, count) {
+            err ? reject(err)
+              : resolve({itemsTotal:count,pageNum:(_page.pageIndex),list:data});
+          });
+        }
       });
   });
 }

@@ -12,6 +12,9 @@
 
         vm.jiong = new Jiong();
         vm.jiongs = [];
+        vm.pageCurrent = 1;
+
+
 
         vm.create = function(jiong) {
           //TODO:add user system
@@ -25,14 +28,16 @@
             .catch($log.error);
         };
 
-        function _getAll() {
+        //_params = {pageObj:{pageIndex:1,pageSize:10},queryObj:{}};
+        function _getAll(params) {
 
 
           return JiongDAO
-            .getAll()
-            .then(function(jiongs) {
-              vm.jiongs = jiongs;
-              return vm.jiongs;
+            .getAll(params)
+            .then(function(data) {
+              vm.result = data;
+              vm.pageCurrent = data.pageNum;
+              return vm.result;
             })
             .catch($log.error);
         }
@@ -46,7 +51,14 @@
             .catch($log.error);
         };
 
-        _getAll();
+        _getAll({pageIndex:vm.pageCurrent,pageSize:2});
+
+
+        vm.pageChanged = function(){
+          console.log(vm.pageCurrent);
+          _getAll({pageIndex:vm.pageCurrent,pageSize:2});
+        }
+
 
         return vm;
       }

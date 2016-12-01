@@ -7,7 +7,7 @@
       function($resource) {
         var _url = '/api/jiongs/:id';
         var _params = {};
-        var _methods = {};
+        var _methods = {'query': {method:'GET', isArray:false}};
 
         return $resource(_url, _params, _methods);
       }

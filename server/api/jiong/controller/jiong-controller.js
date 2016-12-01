@@ -4,8 +4,10 @@ const JiongDAO = require('../dao/jiong-dao');
 
 module.exports = class JiongController {
   static getAll(req, res) {
+    let _query = req.query;
+
     JiongDAO
-        .getAll()
+        .getAll(_query)
         .then(jiongs => res.status(200).json(jiongs))
         .catch(error => res.status(400).json(error));
   }

@@ -9,11 +9,11 @@
       function($q, Jiong, JiongResource) {
         var JiongDAO = function() {};
 
-        JiongDAO.prototype.getAll = function() {
-          var _onSuccess = function(jiongs) {
+        JiongDAO.prototype.getAll = function(params) {
+          var _onSuccess = function(data) {
             // do something with the response from the server, like extending a model or something
 
-            return jiongs; // this will be returned as a resolved promise
+            return data; // this will be returned as a resolved promise
           };
 
           var _onError = function(error) {
@@ -22,7 +22,7 @@
           };
 
           return JiongResource
-            .query()
+            .query(params)
             .$promise
             .then(_onSuccess)
             .catch(_onError);
