@@ -6,27 +6,27 @@
           <div class="entry-meta">
             <ul class="list-inline">
               <li class="post-head"><a><img src="../../common/images/1.jpg"></a></li>
-              <li><a>{{vm.jiong.title}}</a></li>
-              <li><span>{{vm.jiong.createdAt}} </span></li>
-              <li><a href="#">赞 {{vm.jiong.like}}</a></li>
-              <li><a href="#">嘘 {{vm.jiong.unlike}}</a></li>
-              <li><a href="#">收藏 {{vm.jiong.fav}}</a></li>
+              <li><a>{{vm.result.current.title}}</a></li>
+              <li><span>{{vm.result.current.createdAt}} </span></li>
+              <li><a href="#">赞 {{vm.result.current.like}}</a></li>
+              <li><a href="#">嘘 {{vm.result.current.unlike}}</a></li>
+              <li><a href="#">收藏 {{vm.result.current.fav}}</a></li>
               <li><a href="#">评论 20</a></li>
             </ul>
             <a class="info" href="#">
-              {{vm.jiong.content}}
+              {{vm.result.current.content}}
             </a>
 
           </div>
           <div class="row page-tools">
-            <div class="col-sm-2 no-padding">
-              <a class=" btn btn-default">上一条</a>
+            <div class="col-sm-2 no-padding" ng-if="vm.result.prevObj">
+              <a class=" btn btn-default" href="/app/detail/{{vm.result.prevObj._id}}">上一条</a>
             </div>
             <div class="col-sm-2">
               <a class="btn btn-primary"><i class="fa fa-star-o"></i>加入收藏</a>
             </div>
-            <div class="col-sm-8 no-padding">
-              <a class="btn btn-primary">下一条，你懂的</a>
+            <div class="col-sm-8 no-padding" ng-if="vm.result.nextObj">
+              <a class="btn btn-primary" href="/app/detail/{{vm.result.nextObj._id}}" ui-sref="app.detail({id:vm.result.nextObj._id})">下一条，{{vm.result.nextObj.content.substr(0,6)}}</a>
             </div>
           </div>
 

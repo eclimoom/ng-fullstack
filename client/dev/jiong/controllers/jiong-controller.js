@@ -11,7 +11,7 @@
         var vm = this;
 
         vm.jiong = new Jiong();
-        vm.jiongs = [];
+        vm.result = {};
         vm.pageCurrent = 1;
 
 
@@ -30,7 +30,6 @@
 
         //_params = {pageObj:{pageIndex:1,pageSize:10},queryObj:{}};
         function _getAll(params) {
-
 
           return JiongDAO
             .getAll(params)
@@ -53,12 +52,9 @@
 
         _getAll({pageIndex:vm.pageCurrent,pageSize:2});
 
-
         vm.pageChanged = function(){
-          console.log(vm.pageCurrent);
           _getAll({pageIndex:vm.pageCurrent,pageSize:2});
         }
-
 
         return vm;
       }

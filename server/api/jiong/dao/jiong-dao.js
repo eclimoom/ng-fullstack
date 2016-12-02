@@ -49,6 +49,49 @@ jiongSchema.statics.findById = (id) => {
   });
 }
 
+jiongSchema.statics.findContentById = (id) => {
+  return new Promise((resolve, reject) => {
+    if (!_.isString(id))
+      return reject(new TypeError('Id is not a valid string.'));
+
+    Jiong
+      .findOne({_id:id})
+      .exec((err, jiong) => {
+        if(err){
+          reject(err);
+        }else{
+          //下一条
+          Jiong.find({createdAt: {$gt: jiong.createdAt}})
+            .sort({createdAt: 1 })
+            .limit(1)
+            .exec((nerr, next) => {
+              if(nerr){
+                next = [];
+              }
+              //上一条
+              Jiong.find({createdAt: {$lt: jiong.createdAt}})
+                .sort({createdAt: -1 })
+                .limit(1)
+                .exec((perr, prev) => {
+                  if(perr){
+                    prev = [];
+                  }
+                  resolve({current:jiong,nextObj:next[0],prevObj:prev[0]});
+                });
+
+            });
+        }
+      });
+  });
+}
+
+
+//nest record:
+//db.posts.find({_id: {$gt: curObjectId}}).sort({_id: 1 }).limit(1);
+
+//previous record:
+//db.posts.find({_id: {$lt: curObjectId}}).sort({_id: -1 }).limit(1)
+
 
 
 jiongSchema.statics.create = (jiong) => {

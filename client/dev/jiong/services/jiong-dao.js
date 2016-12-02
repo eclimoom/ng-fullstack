@@ -28,6 +28,25 @@
             .catch(_onError);
         };
 
+        JiongDAO.prototype.getDetail = function(params) {
+          var _onSuccess = function(jiong) {
+            // do something with the response from the server, like extending a model or something
+
+            return jiong; // this will be returned as a resolved promise
+          };
+
+          var _onError = function(error) {
+            // do something with the error, like making it more readable or something
+            return $q.reject(error); // this will be returned as a rejected promise
+          };
+
+          return JiongResource
+            .detail(params)
+            .$promise
+            .then(_onSuccess)
+            .catch(_onError);
+        };
+
         JiongDAO.prototype.findOne = function(params) {
           var _onSuccess = function(jiong) {
             // do something with the response from the server, like extending a model or something

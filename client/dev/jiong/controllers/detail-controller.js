@@ -5,23 +5,20 @@
     .controller('DetailController', [
       '$log',
       '$stateParams',
-      'Jiong',
       'JiongDAO',
-      function($log,$stateParams,Jiong, JiongDAO) {
+      function($log,$stateParams, JiongDAO) {
 
 
         var vm = this;
-
         var _id = $stateParams.id;
-
-        vm.jiong = new Jiong();
+        vm.result = {current:{}};
 
         function _getById() {
           return JiongDAO
-            .findOne({ id: _id })
-            .then(function(jiong) {
-              vm.jiong = jiong;
-              return vm.jiong;
+            .getDetail({ id: _id })
+            .then(function(data) {
+              vm.result = data || {current:{}};
+              return vm.result;
             })
             .catch($log.error);
         }

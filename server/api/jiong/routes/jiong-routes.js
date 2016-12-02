@@ -11,7 +11,11 @@ module.exports = class JiongRoutes {
       router
         .route('/api/jiongs/:id')
         .get(JiongController.findById)
+        .post(JiongController.findContentById)
         .delete(JiongController.delete);
+      router
+        .route('/api/detail/:id')
+        .get(JiongController.findContentById)
 
     }
 }
